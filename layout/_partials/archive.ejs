@@ -49,6 +49,12 @@ if (is_category()) {
         <% } %>
       </div>
 
+      <div class="picture">
+          <% if (post.picture) { %>
+          <img src="<%- config.root %><%- post.path %><%- post.picture %>">
+          <% } %>
+      </div>
+
       <hr class="post-list__divider" />
     </li>
     <% }); %>
