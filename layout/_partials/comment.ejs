@@ -4,7 +4,7 @@
     <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
     <script>
         var gitment = new Gitment({
-            id: window.location.pathname,
+            id: window.location.pathname.substr(-49), //github限制label长度不得超过50
             owner: 'tuobaye0711',
             repo: 'tuobaye0711.github.io',
             oauth: {
