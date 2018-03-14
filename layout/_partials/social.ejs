@@ -54,18 +54,25 @@ classes that you can use:
     <% if (config.social.github) { %>
       <!-- Github -->
       <li class="navigation__item">
-        <a href="https://github.com/<%= config.social.github %>" title="my gitHub" target="view_window">
+        <a href="https://github.com/<%= config.social.github %>" title="GitHub" target="view_window">
           <i class='icon icon-social-github'></i>
           <span class="label">GitHub</span>
         </a>
       </li>
       <!-- email -->
       <li class="navigation__item">
-          <a href="mailto:<%= config.social.email %>" title="my mail" target="view_window">
+          <a href="mailto:<%= config.social.email %>" title="Email" target="view_window">
               <i class='icon icon-mail'></i>
               <span class="label">mail</span>
           </a>
       </li>
+      <!-- RSS -->
+      <li class="navigation__item">
+        <a href="/<%= config.social.rss %>" title="RSS" target="view_window">
+            <i class='icon icon-rss'></i>
+            <span class="label">RSS</span>
+        </a>
+    </li>
     <% } %>
 
     <!-- China social icon -->
