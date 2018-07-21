@@ -1886,6 +1886,7 @@ nav {
 
 .navigation--social {
     margin-left: 0em;
+    display: grid;
 }
 
 .navigation--social a {
