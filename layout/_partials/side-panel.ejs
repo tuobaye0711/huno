@@ -1,57 +1,60 @@
-
-<% if (is_home()) { %> 
+<% if (is_home()) { %>
 <header class="panel-cover">
-<% } else { %>
-<header class="panel-cover panel-cover--collapsed">
-<% } %>
+  <% } else { %>
+  <header class="panel-cover panel-cover--collapsed">
+    <% } %>
 
-  <div class="panel-main">
+    <div class="panel-main">
+      <div class="panel-main__inner panel-inverted">
+        <div class="panel-main__content">
+          <% if (theme.logo) { %>
+          <a href="/" title="link to homepage for <%= config.title %>"
+            ><img
+              src="<%= theme.logo %>"
+              width="80"
+              alt="<%= config.title %> logo"
+              class="panel-cover__logo logo"
+          /></a>
+          <% } %>
 
-  
-    <div class="panel-main__inner panel-inverted">
-    <div class="panel-main__content">
+          <h1 class="panel-cover__title panel-title">
+            <a href="/" title="link to homepage"><%= config.title %></a>
+          </h1>
+          <hr class="panel-cover__divider" />
 
-        <% if (theme.logo) { %>
-        <a href="/" title="link to homepage for <%= config.title %>"><img src="<%= theme.logo %>" width="80" alt="<%= config.title %> logo" class="panel-cover__logo logo" /></a>
-        <% } %>
+          <% if (config.subtitle) { %>
+          <p class="panel-cover__description">
+            <%= config.subtitle %>
+          </p>
+          <hr class="panel-cover__divider panel-cover__divider--secondary" />
+          <% } %>
 
-        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage"><%= config.title %></a></h1>
-        <hr class="panel-cover__divider" />
+          <div class="navigation-wrapper">
+            <nav class="cover-navigation cover-navigation--primary">
+              <ul class="navigation">
+                <% for (var i in theme.menu){ %> <% if (theme.menu[i]+'' ==
+                '/#blog') { nav_btn_class = 'blog-button'; } else {
+                nav_btn_class = ''; } %>
+                <li class="navigation__item">
+                  <a
+                    href="<%- theme.menu[i] %>"
+                    title=""
+                    class="<%= nav_btn_class %>"
+                    ><%= i %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </nav>
 
-        <% if (config.subtitle) { %>
-        <p class="panel-cover__description">
-          <%= config.subtitle %>
-        </p>
-        <hr class="panel-cover__divider panel-cover__divider--secondary" />
-        <% } %>
+            <%- partial('_partials/social') %>
+          </div>
 
-        <div class="navigation-wrapper">
-
-          <nav class="cover-navigation cover-navigation--primary">
-            <ul class="navigation">
-
-              <% for (var i in theme.menu){ %>
-                <%
-                  if (theme.menu[i]+'' == '/#blog') {
-                    nav_btn_class = 'blog-button';
-                  } else {
-                    nav_btn_class = '';
-                  }
-                %>
-                <li class="navigation__item"><a href="<%- theme.menu[i] %>" title="" class="<%= nav_btn_class %>"><%= i %></a></li>
-              <% } %>
-
-            </ul>
-          </nav>
-
-          <%- partial('_partials/social') %>
-
+          <a class="panel-cover__record" href="http://www.beian.miit.gov.cn/" target="_blank">苏ICP备19069244号-1</a>
         </div>
-
       </div>
 
+      <div class="panel-cover--overlay"></div>
     </div>
-
-    <div class="panel-cover--overlay"></div>
-  </div>
+  </header>
 </header>
